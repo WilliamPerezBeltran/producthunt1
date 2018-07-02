@@ -1,4 +1,12 @@
 class ProductsController < ApplicationController
+
+	# lo que va hacer es que cada vez que se llame algunas de esas rutas 
+	# el va primero va ejecutar un metodo llamado private_access
+	# exceptuando index y show porque esos metodos si deben ser visibles 
+	# asi no estes autenticado pero los demas como create update edit si solo 
+	# son paginas privadas
+    
+	before_action :private_access, except: [:index, :show]
 	def index
 		@products = Product.all		
 	end
