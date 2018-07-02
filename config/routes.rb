@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 	# delete '/products/:id', to: 'products#destroy'
 
 	resources :products
+
+	root 'products#index'
 end
