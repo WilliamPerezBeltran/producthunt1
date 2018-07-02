@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :public_access, except: [:destroy]
   def new
   end
 
